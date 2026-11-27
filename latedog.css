@@ -1,0 +1,35 @@
+:root { color-scheme: dark; font-family: system-ui,sans-serif; background: #19191d; color: #f8f7fd; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: clamp(12px,4vw,40px); }
+.player { max-width: 736px; margin: auto; padding: clamp(14px,3vw,22px); border: 1px solid #2c2c3d; border-radius: 20px; background: #131524; }
+header,.actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+header > span,footer { color: #c2bece; font-size: .85rem; }
+h1 { font-size: clamp(26px,6vw,38px); letter-spacing: -.055em; margin: 0 0 12px; }
+h1 span { color: #ffcb72; }
+h1 span:first-child { font-size: .6em; }
+.portrait { border-radius: 16px; overflow: hidden; background: radial-gradient(ellipse,#e494e8,#71258c); }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; }
+.wave { display: flex; align-items: center; justify-content: center; gap: clamp(2px,.55vw,4px); height: 44px; margin-top: 14px; }
+.wave span { width: 3px; height: var(--bar); border-radius: 4px; background: #ffcb72; }
+.wave span:nth-child(n+21) { background: #a28af9; }
+.wave.playing span { animation: pulse .32s ease-in-out infinite alternate; animation-delay: var(--delay); }
+@keyframes pulse { to { transform: scaleY(.34); } }
+@media (prefers-reduced-motion: reduce) { .wave.playing span { animation: none; } }
+h2 { text-align: center; font-size: clamp(19px,4vw,26px); margin: 6px 0 14px; }
+#status { text-align: center; margin: 10px 0; }
+#status:empty { display: none; }
+.scenarios { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+.scenarios button:last-child { grid-column: 1 / -1; }
+label { font-weight: 650; font-size: .9rem; }
+input,button { font: inherit; min-height: 44px; }
+input { width: 100%; padding: 8px 12px; border: 1px solid #58536c; border-radius: 10px; background: #1e2033; color: inherit; }
+button { cursor: pointer; border: 1px solid #49455d; border-radius: 24px; padding: 8px 12px; color: inherit; background: #222438; }
+button:disabled { opacity: .55; cursor: default; }
+.scenarios button { background: #ffcb72; color: #241609; border-color: transparent; font-weight: 750; }
+.actions { margin-top: 10px; }
+.actions button { flex: 1; font-size: clamp(.78rem,2.8vw,1rem); }
+#share-box { margin-top: 12px; }
+#share-status { text-align: center; font-size: .9rem; }
+#share-status:empty { display: none; }
+footer { text-align: center; margin-top: 15px; }
+:focus-visible { outline: 3px solid #bd9cff; outline-offset: 3px; }

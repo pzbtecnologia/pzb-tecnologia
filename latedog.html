@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#131524">
+  <meta name="description" content="Escolha uma situação e ouça o latido do LateDog, primeira experiência do Pzb Play.">
+  <title>LateDog | Pzb Play</title>
+  <link rel="stylesheet" href="latedog.css">
+  <script src="latedog.js" defer></script>
+</head>
+<body>
+  <main class="player">
+    <header><h1><span aria-hidden="true">🐾</span> LateDog<span class="dot">.</span></h1><span>by Pzb Play</span></header>
+    <div class="portrait"><img src="latedog.svg" alt="Mascote LateDog" width="1200" height="675"></div>
+    <div class="wave" aria-hidden="true"></div>
+    <h2 id="situacoes-titulo">Toque para ouvir um latido</h2>
+    <div class="scenarios" role="group" aria-labelledby="situacoes-titulo">
+      <button type="button" data-scenario="petisco">Hora do petisco</button>
+      <button type="button" data-scenario="passeio">Hora do passeio</button>
+      <button type="button" data-scenario="brincadeira">Hora de brincar</button>
+      <button type="button" data-scenario="descanso">Hora de descansar</button>
+      <button type="button" data-scenario="visita">Chegou visita</button>
+    </div>
+    <p id="status" role="status"></p>
+    <div class="actions">
+      <button type="button" id="repetir" disabled>Repetir</button>
+      <button type="button" id="compartilhar">Compartilhar</button>
+      <button type="button" id="recomecar">Recomeçar</button>
+    </div>
+    <div id="share-box" hidden>
+      <label for="share-url">Link da página do LateDog</label>
+      <input id="share-url" type="url" readonly>
+    </div>
+    <p id="share-status" role="status"></p>
+    <footer>Simulador de latidos para entretenimento.</footer>
+  </main>
+</body>
+</html>
